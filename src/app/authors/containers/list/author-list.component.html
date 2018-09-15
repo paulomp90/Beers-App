@@ -1,1 +1,17 @@
-teste list
+<form clrForm class="clr-form clr-form-horizontal" [formGroup]="requestForm" (ngSubmit)="onSubmit()">
+    <clr-input-container>
+        <label>First Name</label>
+        <input clrInput type="text" formControlName="firstName" required />
+        <clr-control-error>Write first name</clr-control-error>
+    </clr-input-container>
+
+    <clr-input-container>
+        <label>Last Name</label>
+        <input clrInput type="text" formControlName="lastName" required />
+        <clr-control-error>Write last name</clr-control-error>
+    </clr-input-container>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!requestForm.valid">Search</button>
+</form>
+
+{{ (authors | async) | json}}
