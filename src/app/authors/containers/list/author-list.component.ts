@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IAuthorsService } from '../../../api/interfaces/iauthor';
 
 @Component({
     selector: 'app-author-list',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AuthorListComponent implements OnInit {
-    constructor() { }
 
-    ngOnInit() { }
+    public authors: any;
+
+    constructor(private authorService: IAuthorsService) { }
+
+    ngOnInit() {
+        this.authors = this.authorService.getAuthors('dan', 'brown');
+    }
 }
