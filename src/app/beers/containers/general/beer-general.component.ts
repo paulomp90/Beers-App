@@ -3,7 +3,7 @@ import { IBeerService } from '../../../api/interfaces/ibeer';
 import { Observable } from 'rxjs';
 
 @Component({
-    selector: 'app-beer-general',
+    selector: 'beer-general',
     templateUrl: 'beer-general.component.html'
 })
 

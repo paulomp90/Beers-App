@@ -1,12 +1,24 @@
-<ng-container *ngIf="beersList">
-    <h3>List of results</h3>
-    <br>
-    <ul class="list-unstyled">
-        <li *ngFor="let beer of beersList">
-            <a routerLink="/detail/{{beer.id}}" class="label clickable">
-                {{beer.name}}
-                <span class="badge">{{beer.id}}</span>
-            </a>
-        </li>
-    </ul>
-</ng-container>
+<div class="clr-row">
+    <ng-container *ngIf="beersList">
+        <div class="clr-col-lg-4 clr-col-md-4 clr-col-sm-6 clr-col-xs-12" *ngFor="let beer of beersList">
+            <div class="card">
+                <div class="card-block">
+                    <div class="card-media-block">
+                        <img [src]="beer.image_url" class="card-media-image">
+                        <div class="card-media-description">
+                            <span class="card-media-title">
+                                {{beer.name}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-text">
+                        {{beer.tagline}}
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button routerLink="/detail/{{beer.id}}" class="btn btn-sm btn-link">Detail</button>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
-    selector: 'app-beer-information',
+    selector: 'beer-information',
     templateUrl: 'beer-information.component.html',
+    styleUrls: ['./beer-information.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 
@@ -13,7 +14,6 @@ export class BeerInformationComponent implements OnChanges{
 
     public ngOnChanges (changes: SimpleChanges) {
         if (changes.beerInformation.currentValue) {
-            console.log(changes);
             this.beerInformation = changes.beerInformation.currentValue[0];
         }
     }

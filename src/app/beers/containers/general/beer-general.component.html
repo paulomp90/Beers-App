@@ -1,8 +1,8 @@
 <div class="clr-row">
     <div class="clr-col-5">
-        <app-beer-form (beerFormEmitter)="requestBeerData($event)"></app-beer-form>
+        <beer-form (beerFormEmitter)="requestBeerData($event)"></beer-form>
     </div>
     <div class="clr-col">
-        <app-beer-list [beersList]="beersList | async"></app-beer-list>
+        <beer-list [beersList]="beersList | async"></beer-list>
     </div>
 </div>

@@ -4,7 +4,7 @@ import { IBeerService } from '../../../api/interfaces/ibeer';
 import { Location } from '@angular/common';
 
 @Component({
-    selector: 'app-beer-detail',
+    selector: 'beer-detail',
     templateUrl: 'beer-detail.component.html'
 })
 

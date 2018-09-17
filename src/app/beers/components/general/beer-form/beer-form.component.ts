@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-    selector: 'app-beer-form',
+    selector: 'beer-form',
     templateUrl: 'beer-form.component.html'
 })
 
