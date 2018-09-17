@@ -17,24 +17,24 @@ import { BeerInformationComponent } from './beers/components/detail/beer-informa
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BeerGeneralComponent,
-    BeerDetailComponent,
-    BeerListComponent,
-    BeerFormComponent,
-    BeerInformationComponent
-  ],
-  imports: [
-    BrowserModule,
-    ClarityModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    ClrFormsNextModule,
-    AppRoutingModule,
-    ApiModule.forRoot()
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        BeerGeneralComponent,
+        BeerDetailComponent,
+        BeerListComponent,
+        BeerFormComponent,
+        BeerInformationComponent
+    ],
+    imports: [
+        BrowserModule,
+        ClarityModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        ClrFormsNextModule,
+        AppRoutingModule,
+        ApiModule.forRoot()
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

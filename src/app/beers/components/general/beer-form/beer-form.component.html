@@ -1,8 +1,8 @@
-
 <form clrForm clrLayout="horizontal" [formGroup]="requestForm" (ngSubmit)="onSubmitBeerForm()">
     <clr-input-container>
         <label>Ingredient</label>
         <input clrInput type="text" formControlName="Ingredient" required minlength="3" />
+        <clr-control-helper>Ex: carne</clr-control-helper>
         <clr-control-error>Write an ingredient</clr-control-error>
     </clr-input-container>
 
