@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IBeerService } from '../../../api/interfaces/ibeer';
 import { Location } from '@angular/common';
+import { BeerModelUI, RequestBeerByIdModelUI } from '../../models/beer.models';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'beer-detail',
@@ -10,8 +12,8 @@ import { Location } from '@angular/common';
 
 export class BeerDetailComponent implements OnInit {
 
-    private beerId: number;
-    private beerInformation: any;
+    private beer: RequestBeerByIdModelUI;
+    private beerInformation: Observable<BeerModelUI>;
 
     constructor(
         private beerService: IBeerService,
@@ -23,8 +25,10 @@ export class BeerDetailComponent implements OnInit {
      * Get id from url route and send request to get beer details
      */
     public ngOnInit(): void {
-        this.beerId = Number(this.route.snapshot.paramMap.get('id'));
-        this.beerInformation = this.beerService.getBeerById(this.beerId);
+        this.beer = {
+            Id: Number(this.route.snapshot.paramMap.get('id'))
+        };
+        this.beerInformation = this.beerService.getBeerById(this.beer);
     }
 
     /**

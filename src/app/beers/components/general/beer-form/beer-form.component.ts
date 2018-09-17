@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RequestBeerByIngredientModelUI } from '../../../models/beer.models';
 
 @Component({
     selector: 'beer-form',
@@ -10,7 +11,7 @@ export class BeerFormComponent implements OnInit {
 
     public requestForm: FormGroup;
 
-    @Output() public beerFormEmitter: EventEmitter<any> = new EventEmitter();
+    @Output() public beerFormEmitter: EventEmitter<RequestBeerByIngredientModelUI> = new EventEmitter();
 
     constructor(
         private formBuilder: FormBuilder
@@ -19,16 +20,16 @@ export class BeerFormComponent implements OnInit {
     /**
      * Initialize request form with empty values
      */
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.requestForm = this.formBuilder.group({
-            ingredient: ['', Validators.required]
+            Ingredient: ['', Validators.required]
         });
     }
 
     /**
      * Emit request form values to parent component
      */
-    private onSubmitBeerForm() {
+    private onSubmitBeerForm(): void{
         this.beerFormEmitter.emit(this.requestForm.value);
     }
 }

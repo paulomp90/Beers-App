@@ -2,6 +2,7 @@ import { Injectable, } from '@angular/core';
 import { IBeerService } from '../interfaces/ibeer';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { RequestBeerByIngredientModelUI, BeerModelUI, RequestBeerByIdModelUI } from '../../beers/models/beer.models';
 
 @Injectable()
 export class BeerService implements IBeerService {
@@ -10,11 +11,11 @@ export class BeerService implements IBeerService {
 
     constructor(private http: HttpClient) { }
 
-    public getBeerByIngredient(ingredient: string): Observable<any> {
-        return this.http.get(this.apiUrl + '?food=' + ingredient);
+    public getBeerByIngredient(request: RequestBeerByIngredientModelUI): Observable<BeerModelUI[]> {
+        return this.http.get<BeerModelUI[]>(this.apiUrl + '?food=' + request.Ingredient);
     }
 
-    public getBeerById(id: number): Observable<any> {
-        return this.http.get(this.apiUrl + '/' + id);
+    public getBeerById(request: RequestBeerByIdModelUI): Observable<BeerModelUI> {
+        return this.http.get<BeerModelUI>(this.apiUrl + '/' + request.Id);
     }
 }

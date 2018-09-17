@@ -1,6 +1,7 @@
 import { Component  } from '@angular/core';
 import { IBeerService } from '../../../api/interfaces/ibeer';
 import { Observable } from 'rxjs';
+import { BeerModelUI, RequestBeerByIngredientModelUI } from '../../models/beer.models';
 
 @Component({
     selector: 'beer-general',
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 
 export class BeerGeneralComponent {
 
-    public beersList: Observable<any>;
+    public beersList: Observable<BeerModelUI[]>;
 
     constructor(
         private beerService: IBeerService
@@ -19,7 +20,7 @@ export class BeerGeneralComponent {
      * Request beer information to api
      * @param beerRequest beer form information with ingredient string
      */
-    private requestBeerData(beerRequest: any) {
-        this.beersList = this.beerService.getBeerByIngredient(beerRequest.ingredient);
+    private requestBeerData(beerRequest: RequestBeerByIngredientModelUI): void {
+        this.beersList = this.beerService.getBeerByIngredient(beerRequest);
     }
 }

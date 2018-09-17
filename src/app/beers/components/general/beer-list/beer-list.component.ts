@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { BeerModelUI } from '../../../models/beer.models';
 
 @Component({
     selector: 'beer-list',
@@ -7,5 +8,5 @@ import { Component, Input } from '@angular/core';
 
 export class BeerListComponent {
 
-    @Input() public beersList: any;
+    @Input() public beersList: BeerModelUI[];
 }
