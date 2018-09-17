@@ -1,0 +1,12 @@
+<ng-container *ngIf="beersList">
+    <h3>List of results</h3>
+    <br>
+    <ul class="list-unstyled">
+        <li *ngFor="let beer of beersList">
+            <a routerLink="/detail/{{beer.id}}" class="label clickable">
+                {{beer.name}}
+                <span class="badge">{{beer.id}}</span>
+            </a>
+        </li>
+    </ul>
+</ng-container>

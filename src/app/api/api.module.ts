@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AuthorsService } from './classes/authors.service';
-import { IAuthorsService } from './interfaces/iauthor';
+import { BeerService } from './classes/beer.service';
+import { IBeerService } from './interfaces/ibeer';
 
 @NgModule({
     imports: [
@@ -19,7 +19,7 @@ export class ApiModule {
         return {
             ngModule: ApiModule,
             providers: [
-                { provide: IAuthorsService, useClass: AuthorsService }
+                { provide: IBeerService, useClass: BeerService }
             ]
         };
     }

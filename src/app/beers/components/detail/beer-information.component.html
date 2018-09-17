@@ -1,0 +1,14 @@
+{{ beerInformation | json}}
+<ng-container *ngIf="beerInformation">
+    <div class="clr-row">
+        <div class="clr-col-4">
+            <!-- {{ beerInformation.image_url }} -->
+            <img [src]="beerInformation.image_url" width="50" height="150">
+        </div>
+        <div class="clr-col-2">
+            {{ beerInformation.name }}
+        </div>
+    </div>
+</ng-container>
+
+<button class="btn btn-primary" (click)="goBack()">go back</button>
