@@ -19,16 +19,18 @@ export class BeerDetailComponent implements OnInit {
         private location: Location
     ) {}
 
-    ngOnInit(): void {
+    /**
+     * Get id from url route and send request to get beer details
+     */
+    public ngOnInit(): void {
         this.beerId = Number(this.route.snapshot.paramMap.get('id'));
-        console.log(this.beerId);
         this.beerInformation = this.beerService.getBeerById(this.beerId);
     }
 
     /**
      * Go to previous page
      */
-    goBack(): void {
+    private goBack(): void {
         this.location.back();
     }
 }

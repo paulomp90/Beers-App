@@ -8,10 +8,14 @@ import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy, OnChan
 })
 
 export class BeerInformationComponent implements OnChanges{
+
     @Input() public beerInformation: any = {};
 
     @Output() goBackEmitter: EventEmitter<any> = new EventEmitter();
 
+    /**
+     * Verify if variable beerInformation has undergone any change in his data and update variable
+     */
     public ngOnChanges (changes: SimpleChanges) {
         if (changes.beerInformation.currentValue) {
             this.beerInformation = changes.beerInformation.currentValue[0];

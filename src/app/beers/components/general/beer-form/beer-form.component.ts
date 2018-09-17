@@ -16,13 +16,19 @@ export class BeerFormComponent implements OnInit {
         private formBuilder: FormBuilder
     ) { }
 
-    ngOnInit() {
+    /**
+     * Initialize request form with empty values
+     */
+    public ngOnInit() {
         this.requestForm = this.formBuilder.group({
             ingredient: ['', Validators.required]
         });
     }
 
-    onSubmitBeerForm() {
+    /**
+     * Emit request form values to parent component
+     */
+    private onSubmitBeerForm() {
         this.beerFormEmitter.emit(this.requestForm.value);
     }
 }
