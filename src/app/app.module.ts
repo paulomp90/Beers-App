@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ClarityModule, ClrFormsNextModule } from '@clr/angular';
+import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ApiModule } from './api/api.module';
@@ -30,7 +30,6 @@ import { AppRoutingModule } from './app-routing.module';
         ClarityModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
-        ClrFormsNextModule,
         AppRoutingModule,
         ApiModule.forRoot()
     ],
