@@ -1,29 +1,4 @@
-<!--
-<form clrForm clrLayout="horizontal" [formGroup]="requestForm" (ngSubmit)="onSubmitBeerForm()">
-    <div class="clr-row">
-        <div class="clr-col-offset-4 clr-col-4">
-            <input type="text" id="basic" formControlName="Ingredient" required minlength="3" placeholder="Enter an ingredient" class="clr-input">
-        </div>
-        <div class="clr-col-12">
-            <button class="btn btn-success" type="submit" [disabled]="!requestForm.valid" style="margin-top: 25px;">Success-Outline</button>
-        </div>
-    </div>
-</form>
--->
-
-<!-- <form clrForm clrLayout="horizontal" [formGroup]="requestForm" (ngSubmit)="onSubmitBeerForm()">
-    <clr-input-container>
-        <label>Ingredient</label>
-        <input clrInput type="text" formControlName="Ingredient" required minlength="3" />
-        <clr-control-helper>Ex: carne</clr-control-helper>
-        <clr-control-error>Write an ingredient</clr-control-error>
-    </clr-input-container>
-
-    <button class="btn btn-primary" style="margin-top: 25px;" type="submit" [disabled]="!requestForm.valid">Search</button>
-</form> -->
-
-
-<form [formGroup]="requestForm" class="clr-form clr-form-compact">
+<form [formGroup]="requestForm" class="clr-form clr-form-compact" (ngSubmit)="onSubmitBeerForm()">
     <div class="clr-form-control clr-row">
         <label for="inputIngredient" class="clr-control-label clr-col-12 clr-col-md-3" style="text-align: center;">Ingredient</label>
         <div class="clr-control-container clr-col-12 clr-col-md-9">
