@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IBeerService } from '../../../api/interfaces/ibeer';
+import { BeerService } from '../../../services/beer.service';
 import { Location } from '@angular/common';
 import { BeerModelUI, RequestBeerByIdModelUI } from '../../models/beer.models';
 import { Observable } from 'rxjs';
@@ -16,7 +16,7 @@ export class BeerDetailComponent implements OnInit {
     private beerInformation: Observable<BeerModelUI>;
 
     constructor(
-        private beerService: IBeerService,
+        private beerService: BeerService,
         private route: ActivatedRoute,
         private location: Location
     ) {}

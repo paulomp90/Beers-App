@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ApiModule } from './api/api.module';
 
 import { BeerGeneralComponent } from './beers/containers/general/beer-general.component';
 import { BeerDetailComponent } from './beers/containers/detail/beer-detail.component';
@@ -15,6 +14,12 @@ import { BeerFormComponent } from './beers/components/general/beer-form/beer-for
 import { BeerInformationComponent } from './beers/components/detail/beer-information.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import * as fromBeer from './beers/reducers/beer.reducer';
+import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
+import { BeerEffects } from './beers/effects/beer.effects';
 
 @NgModule({
     declarations: [
@@ -31,7 +36,12 @@ import { AppRoutingModule } from './app-routing.module';
         ReactiveFormsModule,
         BrowserAnimationsModule,
         AppRoutingModule,
-        ApiModule.forRoot()
+        HttpClientModule,
+        StoreModule.forRoot({ beer: fromBeer.reducer }),
+        StoreDevtoolsModule.instrument({
+            maxAge: 10, // Retains last x states
+        }),
+        EffectsModule.forRoot([BeerEffects])
     ],
     providers: [],
     bootstrap: [AppComponent]

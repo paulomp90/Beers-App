@@ -1,11 +1,12 @@
 import { Injectable, } from '@angular/core';
-import { IBeerService } from '../interfaces/ibeer';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { RequestBeerByIngredientModelUI, BeerModelUI, RequestBeerByIdModelUI } from '../../beers/models/beer.models';
+import { RequestBeerByIngredientModelUI, BeerModelUI, RequestBeerByIdModelUI } from '../beers/models/beer.models';
 
-@Injectable()
-export class BeerService implements IBeerService {
+@Injectable({
+    providedIn: 'root',
+})
+export class BeerService {
 
     protected apiUrl = 'https://api.punkapi.com/v2/beers';
 

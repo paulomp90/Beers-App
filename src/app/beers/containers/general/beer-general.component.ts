@@ -1,26 +1,32 @@
-import { Component  } from '@angular/core';
-import { IBeerService } from '../../../api/interfaces/ibeer';
+import { Component, OnInit  } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BeerModelUI, RequestBeerByIngredientModelUI } from '../../models/beer.models';
+import { Store, select } from '@ngrx/store';
+import * as BeerReducers from '../../reducers/beer.reducer';
+import * as BeerActions from '../../actions/beer.actions';
 
 @Component({
     selector: 'beer-general',
     templateUrl: 'beer-general.component.html'
 })
 
-export class BeerGeneralComponent {
+export class BeerGeneralComponent implements OnInit {
 
-    public beersList: Observable<BeerModelUI[]>;
+    public beersList$: Observable<BeerModelUI[]>;
 
     constructor(
-        private beerService: IBeerService
-    ) { }
+        private store: Store<BeerReducers.IBeerState>
+    ) {}
+
+    ngOnInit() {
+        this.beersList$ = this.store.pipe(select(BeerReducers.getBeerList));
+    }
 
     /**
      * Request beer information to api
      * @param beerRequest beer form information with ingredient string
      */
     private requestBeerData(beerRequest: RequestBeerByIngredientModelUI): void {
-        this.beersList = this.beerService.getBeerByIngredient(beerRequest);
+        this.store.dispatch(BeerActions.GetBeer(beerRequest));
     }
 }

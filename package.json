@@ -21,18 +21,20 @@
     "@angular/platform-browser-dynamic": "^8.2.14",
     "@angular/router": "^8.2.14",
     "@clr/angular": "^2.3.3",
+    "@clr/icons": "^2.3.3",
+    "@clr/ui": "^2.3.3",
+    "@ngrx/effects": "^8.6.0",
+    "@ngrx/store": "^8.6.0",
+    "@ngrx/store-devtools": "^8.6.0",
+    "@webcomponents/custom-elements": "^1.0.0",
     "core-js": "^3.4.8",
     "rxjs": "6.4.0",
-    "zone.js": "^0.10.2",
-    "@clr/ui": "^2.3.3",
-    "@clr/icons": "^2.3.3",
-    "@webcomponents/custom-elements": "^1.0.0"
+    "zone.js": "^0.10.2"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^8.2.14",
     "@angular-devkit/build-angular": "~0.803.20",
-    "typescript": "3.6.0",
     "@angular/cli": "~8.3.20",
+    "@angular/compiler-cli": "^8.2.14",
     "@angular/language-service": "^8.2.14",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
@@ -47,6 +49,7 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~5.4.2",
     "ts-node": "~8.5.4",
-    "tslint": "~5.20.1"
+    "tslint": "~5.20.1",
+    "typescript": "3.5.3"
   }
 }
