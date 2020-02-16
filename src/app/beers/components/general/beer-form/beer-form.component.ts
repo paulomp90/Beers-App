@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RequestBeerByIngredientModelUI } from '../../../models/beer.models';
 
@@ -11,6 +11,8 @@ export class BeerFormComponent implements OnInit {
 
     public requestForm: FormGroup;
 
+    @Input() private lastSearchTerm: string;
+
     @Output() public beerFormEmitter: EventEmitter<RequestBeerByIngredientModelUI> = new EventEmitter();
 
     constructor(
@@ -22,7 +24,7 @@ export class BeerFormComponent implements OnInit {
      */
     public ngOnInit(): void {
         this.requestForm = this.formBuilder.group({
-            Ingredient: ['', Validators.required]
+            Ingredient: [this.lastSearchTerm, Validators.required]
         });
     }
 

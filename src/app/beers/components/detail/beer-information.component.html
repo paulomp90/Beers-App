@@ -1,19 +1,19 @@
-<ng-container *ngIf="beerInformation">
+<ng-container *ngIf="beerDetail">
     <div class="clr-row">
         <div class="clr-offset-lg-2 clr-offset-md-2 clr-col-lg-3 clr-col-md-3 clr-col-sm-12 clr-col-xs-12">
-            <img class="image-sizes" [src]="beerInformation.image_url" alt="">
+            <img class="image-sizes" [src]="beerDetail.image_url" alt="">
         </div>
         <div class="clr-col-lg-7 clr-col-md-7 clr-col-sm-12 clr-col-xs-12">
             <div>
-                <h1>{{ beerInformation.name }}</h1>
+                <h1>{{ beerDetail.name }}</h1>
                 <h4>Description</h4>
-                <p>{{ beerInformation.description }}</p>
+                <p>{{ beerDetail.description }}</p>
                 <h4>Food</h4>
-                <p>{{ beerInformation.food_pairing }}</p>
+                <p>{{ beerDetail.food_pairing }}</p>
                 <h4>First brewed</h4>
-                <p>{{ beerInformation.first_brewed }}</p>
+                <p>{{ beerDetail.first_brewed }}</p>
                 <h4>Brewers tips</h4>
-                <p>{{ beerInformation.brewers_tips }}</p>
+                <p>{{ beerDetail.brewers_tips }}</p>
             </div>
         </div>
     </div>

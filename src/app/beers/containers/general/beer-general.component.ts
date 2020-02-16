@@ -13,6 +13,7 @@ import * as BeerActions from '../../actions/beer.actions';
 export class BeerGeneralComponent implements OnInit {
 
     public beersList$: Observable<BeerModelUI[]>;
+    public lastSearchTerm$: Observable<string>;
 
     constructor(
         private store: Store<BeerReducers.IBeerState>
@@ -20,6 +21,7 @@ export class BeerGeneralComponent implements OnInit {
 
     ngOnInit() {
         this.beersList$ = this.store.pipe(select(BeerReducers.getBeerList));
+        this.lastSearchTerm$ = this.store.pipe(select(BeerReducers.getLastSearchTerm));
     }
 
     /**
@@ -27,6 +29,6 @@ export class BeerGeneralComponent implements OnInit {
      * @param beerRequest beer form information with ingredient string
      */
     private requestBeerData(beerRequest: RequestBeerByIngredientModelUI): void {
-        this.store.dispatch(BeerActions.GetBeer(beerRequest));
+        this.store.dispatch(BeerActions.GetBeerList(beerRequest));
     }
 }

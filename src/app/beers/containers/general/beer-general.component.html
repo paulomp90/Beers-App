@@ -9,7 +9,10 @@
     </div>
     <div class="clr-col-12 clr-col-md-4" style="margin-top: auto;">
         <div class="clr-row clr-justify-content-center">
-            <beer-form (beerFormEmitter)="requestBeerData($event)"></beer-form>
+            <beer-form
+                    [lastSearchTerm]="lastSearchTerm$ | async"
+                    (beerFormEmitter)="requestBeerData($event)">
+            </beer-form>
         </div>
     </div>
 </div>

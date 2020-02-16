@@ -1,3 +1,4 @@
-<beer-information [beerInformation]="beerInformation | async"
-                      (goBackEmitter)="goBack()">
+<beer-information
+    [beerDetail]="beerDetail$ | async"
+    (goBackEmitter)="goBack()">
 </beer-information>

@@ -4,6 +4,9 @@ import { BeerService } from '../../../services/beer.service';
 import { Location } from '@angular/common';
 import { BeerModelUI, RequestBeerByIdModelUI } from '../../models/beer.models';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import * as BeerReducers from '../../reducers/beer.reducer';
+import * as BeerActions from '../../actions/beer.actions';
 
 @Component({
     selector: 'beer-detail',
@@ -12,13 +15,14 @@ import { Observable } from 'rxjs';
 
 export class BeerDetailComponent implements OnInit {
 
+    public  beerDetail$: Observable<BeerModelUI>;
     private beer: RequestBeerByIdModelUI;
-    private beerInformation: Observable<BeerModelUI>;
 
     constructor(
         private beerService: BeerService,
         private route: ActivatedRoute,
-        private location: Location
+        private location: Location,
+        private store: Store<BeerReducers.IBeerState>
     ) {}
 
     /**
@@ -28,13 +32,15 @@ export class BeerDetailComponent implements OnInit {
         this.beer = {
             Id: Number(this.route.snapshot.paramMap.get('id'))
         };
-        this.beerInformation = this.beerService.getBeerById(this.beer);
+        this.beerDetail$ = this.store.select(BeerReducers.getBeerDetail)
+        this.getBeerDetail()
     }
 
-    /**
-     * Go to previous page
-     */
-    private goBack(): void {
+    private getBeerDetail() {
+        this.store.dispatch(BeerActions.GetBeerDetail(this.beer))
+    }
+
+    public goBack(): void {
         this.location.back();
     }
 }
