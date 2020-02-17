@@ -7,7 +7,8 @@ import * as BeerActions from '../../actions/beer.actions';
 
 @Component({
     selector: 'beer-general',
-    templateUrl: 'beer-general.component.html'
+    templateUrl: 'beer-general.component.html',
+    styleUrls: ['./beer-general.component.css']
 })
 
 export class BeerGeneralComponent implements OnInit {

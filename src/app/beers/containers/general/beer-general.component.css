@@ -1,0 +1,11 @@
+h1, h3 {
+    color: #E85A4F !important;
+}
+
+.clr-control-label {
+    color: #8E8D8A !important;
+}
+
+.clr-input {
+    border-bottom: 1px solid #8E8D8A !important;
+}
