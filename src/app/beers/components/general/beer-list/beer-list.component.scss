@@ -1,0 +1,11 @@
+img {
+    width: 2.5rem !important;
+    height: 5.5rem !important;
+    max-height: unset !important;
+    max-width: unset !important;
+    transition: all 250ms ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
