@@ -4,7 +4,7 @@ import { BeerModelUI } from '../../models/beer.models';
 @Component({
     selector: 'beer-information',
     templateUrl: 'beer-information.component.html',
-    styleUrls: ['./beer-information.component.css'],
+    styleUrls: ['./beer-information.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 

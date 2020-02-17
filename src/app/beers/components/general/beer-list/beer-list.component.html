@@ -3,16 +3,11 @@
         <div class="clr-col-lg-4 clr-col-md-4 clr-col-sm-6 clr-col-xs-12" *ngFor="let beer of beersList">
             <div class="card">
                 <div class="card-block">
-                    <div class="card-media-block">
+                    <div class="card-media-block" style="justify-content: center;">
                         <img [src]="beer.image_url" class="card-media-image" style="width: unset;height: unset;">
-                        <div class="card-media-description">
-                            <span class="card-media-title">
-                                {{beer.name}}
-                            </span>
-                        </div>
                     </div>
-                    <div class="card-text">
-                        {{beer.tagline}}
+                    <div class="card-text" style="text-align: center;">
+                        {{beer.name}}
                     </div>
                 </div>
                 <div class="card-footer">
