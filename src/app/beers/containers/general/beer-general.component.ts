@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { BeerModelUI, RequestBeerByIngredientModelUI } from '../../models/beer.models';
 import { Store, select } from '@ngrx/store';
 import * as BeerReducers from '../../reducers/beer.reducer';
+import * as MainReducers from '../../reducers/main.reducer';
 import * as BeerActions from '../../actions/beer.actions';
 
 @Component({
@@ -14,6 +15,7 @@ import * as BeerActions from '../../actions/beer.actions';
 export class BeerGeneralComponent implements OnInit {
 
     public beersList$: Observable<BeerModelUI[]>;
+    public loading$: Observable<boolean>;
     public lastSearchTerm$: Observable<string>;
 
     constructor(
@@ -22,6 +24,7 @@ export class BeerGeneralComponent implements OnInit {
 
     ngOnInit() {
         this.beersList$ = this.store.pipe(select(BeerReducers.getBeerList));
+        this.loading$ = this.store.pipe(select(MainReducers.getLoading));
         this.lastSearchTerm$ = this.store.pipe(select(BeerReducers.getLastSearchTerm));
     }
 

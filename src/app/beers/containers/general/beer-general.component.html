@@ -17,8 +17,11 @@
     </div>
 </div>
 
-<div class="clr-row">
-    <div class="clr-col">
+<div class="clr-row clr-justify-content-center">
+    <div>
+        <clr-spinner *ngIf="loading$ | async">Loading data</clr-spinner>
+    </div>
+    <div class="clr-col" *ngIf="!(loading$ | async)">
         <beer-list [beersList]="beersList$ | async"></beer-list>
     </div>
 </div>

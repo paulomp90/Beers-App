@@ -16,10 +16,10 @@ import { BeerInformationComponent } from './beers/components/detail/beer-informa
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import * as fromBeer from './beers/reducers/beer.reducer';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { BeerEffects } from './beers/effects/beer.effects';
+import { reducers } from './app.reducer';
 
 @NgModule({
     declarations: [
@@ -37,7 +37,7 @@ import { BeerEffects } from './beers/effects/beer.effects';
         BrowserAnimationsModule,
         AppRoutingModule,
         HttpClientModule,
-        StoreModule.forRoot({ beer: fromBeer.reducer }),
+        StoreModule.forRoot(reducers),
         StoreDevtoolsModule.instrument({
             maxAge: 10, // Retains last x states
         }),

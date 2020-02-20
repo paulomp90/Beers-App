@@ -15,7 +15,6 @@ export const initialState: IBeerState = {
     lastSearchTerm: ''
 };
 
-
 const beerReducer = createReducer(
     initialState,
     on(BeerActions.GetBeerListSuccess, (state, { payload }) => ({ ...state, beerList: payload })),
