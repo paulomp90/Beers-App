@@ -1,12 +1,12 @@
 <form [formGroup]="requestForm" class="clr-form clr-form-compact" (ngSubmit)="onSubmitBeerForm()">
     <div class="clr-form-control clr-row">
-        <label for="inputIngredient" class="clr-control-label clr-col-12 clr-col-md-3 text-center" style="color: #8E8D8A">Ingredient</label>
+        <label for="inputIngredient" class="clr-control-label clr-col-12 clr-col-md-3 text-center c-grey">Ingredient</label>
         <div class="clr-control-container clr-col-12 clr-col-md-9">
-            <input type="text" id="inputIngredient" formControlName="Ingredient" required minlength="3" class="clr-input" style="width: 100%;border-bottom: 1px solid #8E8D8A;">
+            <input type="text" id="inputIngredient" formControlName="Ingredient" required minlength="3" class="clr-input input-ingredient">
             <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
         </div>
     </div>
     <div class="clr-row">
-        <button class="clr-col-12 clr-col-md-4 clr-offset-md-4 btn btn-outline" style="margin-top: 25px;" type="submit" [disabled]="!requestForm.valid">Search</button>
+        <button class="clr-col-12 clr-col-md-4 clr-offset-md-4 btn btn-outline mt-2" type="submit" [disabled]="!requestForm.valid">Search</button>
     </div>
 </form>

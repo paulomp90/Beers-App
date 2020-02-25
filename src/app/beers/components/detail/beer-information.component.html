@@ -1,21 +1,23 @@
 <ng-container *ngIf="beerDetail">
-    <div class="clr-row">
-        <div class="clr-offset-lg-2 clr-offset-md-2 clr-col-lg-3 clr-col-md-3 clr-col-sm-12 clr-col-xs-12">
+    <div class="clr-row clr-justify-content-center">
+        <div class="clr-col-md-4 clr-col-sm-12 clr-col-xs-12">
             <img class="image-sizes" [src]="beerDetail.image_url" alt="">
         </div>
-        <div class="clr-col-lg-7 clr-col-md-7 clr-col-sm-12 clr-col-xs-12">
+        <div class="clr-col">
             <div>
-                <h1>{{ beerDetail.name }}</h1>
-                <h4>Description</h4>
+                <h1 class="text-center">{{ beerDetail.name }}</h1>
+                <h3>Description</h3>
                 <p>{{ beerDetail.description }}</p>
-                <h4>Food</h4>
+                <h3>Food</h3>
                 <p>{{ beerDetail.food_pairing }}</p>
-                <h4>First brewed</h4>
+                <h3>First brewed</h3>
                 <p>{{ beerDetail.first_brewed }}</p>
-                <h4>Brewers tips</h4>
+                <h3>Brewers tips</h3>
                 <p>{{ beerDetail.brewers_tips }}</p>
             </div>
         </div>
     </div>
 </ng-container>
-<button class="btn btn-primary margin-button" (click)="goBack()">go back</button>
+<div class="clr-row clr-justify-content-center mt-3">
+    <button class="btn btn-primary clr-col-md-2 clr-col-sm-12" (click)="goBack()">go back</button>
+</div>

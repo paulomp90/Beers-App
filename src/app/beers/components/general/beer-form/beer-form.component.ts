@@ -1,10 +1,12 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RequestBeerByIngredientModelUI } from '../../../models/beer.models';
 
 @Component({
     selector: 'beer-form',
-    templateUrl: 'beer-form.component.html'
+    templateUrl: 'beer-form.component.html',
+    styleUrls: ['./beer-form.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class BeerFormComponent implements OnInit {

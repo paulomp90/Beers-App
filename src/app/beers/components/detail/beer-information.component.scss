@@ -1,8 +1,13 @@
 .image-sizes{
-    max-width: 350px;
-    max-height: 650px;
+    max-width: 200px;
+    max-height: 350px;
+    display: block;
+    margin: auto;
+    margin-top: 100px;
 }
 
-.margin-button{
-    margin-top: 25px;
+@media only screen and (max-width: 600px) {
+    .image-sizes {
+        margin-top: 0px;
+    }
 }
